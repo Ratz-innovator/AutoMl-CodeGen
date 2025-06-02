@@ -1,0 +1,229 @@
+# =============================================================================
+# nanoNAS Experiment Configurations
+# =============================================================================
+# 
+# This file contains pre-configured experiment setups for various scenarios
+# including benchmarking, research experiments, and quick prototyping.
+#
+# Usage:
+#   python -m nanonas.api search --config configs/experiment_configs.yaml --experiment cifar10_evolutionary
+#
+
+# Default base configuration that other experiments inherit from
+default: &default
+  # Experiment metadata
+  experiment:
+    name: "nanonas_experiment"
+    description: "Neural Architecture Search with nanoNAS"
+    version: "1.0"
+    tags: ["nas", "automl", "research"]
+  
+  # Dataset configuration
+  dataset:
+    name: "cifar10"
+    batch_size: 128
+    num_workers: 4
+    pin_memory: true
+    augmentation: true
+    normalize: true
+    validation_split: 0.1
+  
+  # Model configuration
+  model:
+    input_channels: 3
+    num_classes: 10
+    base_channels: 16
+    dropout: 0.1
+  
+  # Search configuration
+  search:
+    strategy: "evolutionary"
+    search_space: "nano"
+    population_size: 20
+    generations: 50
+    mutation_rate: 0.3
+    crossover_rate: 0.6
+    elitism_ratio: 0.2
+    max_search_time: 3600  # 1 hour
+    early_stopping_patience: 10
+  
+  # Training configuration
+  training:
+    epochs: 50
+    learning_rate: 0.01
+    weight_decay: 0.0001
+    scheduler: "cosine"
+    optimizer: "sgd"
+    momentum: 0.9
+    gradient_clipping: 5.0
+    warmup_epochs: 5
+    label_smoothing: 0.1
+  
+  # Evaluation configuration
+  evaluation:
+    metrics: ["accuracy", "loss", "f1_score"]
+    quick_eval_epochs: 5
+    full_eval_epochs: 50
+    validate_every: 5
+    save_checkpoints: true
+  
+  # Hardware configuration
+  device: "cuda"
+  mixed_precision: true
+  compile_model: false
+  
+  # Output configuration
+  output:
+    save_dir: "results/experiments"
+    log_level: "INFO"
+    save_plots: true
+    save_models: true
+    export_onnx: false
+
+# =============================================================================
+# CIFAR-10 Experiments
+# =============================================================================
+
+# Evolutionary search on CIFAR-10 - baseline experiment
+cifar10_evolutionary:
+  <<: *default
+  experiment:
+    name: "cifar10_evolutionary_baseline"
+    description: "Evolutionary NAS on CIFAR-10 with nanoNAS framework"
+    tags: ["cifar10", "evolutionary", "baseline"]
+  
+  dataset:
+    name: "cifar10"
+    batch_size: 128
+    augmentation: true
+  
+  search:
+    strategy: "evolutionary"
+    search_space: "nano"
+    population_size: 30
+    generations: 100
+    mutation_rate: 0.3
+    crossover_rate: 0.7
+    max_search_time: 7200  # 2 hours
+  
+  training:
+    epochs: 100
+    learning_rate: 0.025
+    scheduler: "cosine"
+
+# DARTS search on CIFAR-10 - differentiable approach
+cifar10_darts:
+  <<: *default
+  experiment:
+    name: "cifar10_darts_search"
+    description: "DARTS (Differentiable Architecture Search) on CIFAR-10"
+    tags: ["cifar10", "darts", "differentiable"]
+  
+  dataset:
+    name: "cifar10"
+    batch_size: 96  # Smaller batch for memory efficiency
+  
+  search:
+    strategy: "darts"
+    search_space: "nano"
+    epochs: 50
+    architecture_lr: 3e-4
+    weight_lr: 0.025
+    weight_decay: 3e-4
+    arch_weight_decay: 1e-3
+    unrolled: true
+    auxiliary: true
+    auxiliary_weight: 0.4
+    drop_path_prob: 0.3
+  
+  training:
+    epochs: 600
+    learning_rate: 0.025
+    auxiliary: true
+    cutout: true
+    cutout_length: 16
+
+# Random search baseline on CIFAR-10
+cifar10_random:
+  <<: *default
+  experiment:
+    name: "cifar10_random_baseline"
+    description: "Random search baseline on CIFAR-10"
+    tags: ["cifar10", "random", "baseline"]
+  
+  search:
+    strategy: "random"
+    population_size: 50
+    generations: 50
+    max_search_time: 3600
+  
+  evaluation:
+    quick_eval_epochs: 10
+
+# =============================================================================
+# MNIST Experiments
+# =============================================================================
+
+# Quick prototyping on MNIST
+mnist_quick:
+  <<: *default
+  experiment:
+    name: "mnist_quick_prototype"
+    description: "Quick prototyping and testing on MNIST"
+    tags: ["mnist", "prototype", "quick"]
+  
+  dataset:
+    name: "mnist"
+    batch_size: 256
+    augmentation: false
+  
+  model:
+    input_channels: 1
+    num_classes: 10
+    base_channels: 8
+  
+  search:
+    strategy: "evolutionary"
+    population_size: 15
+    generations: 20
+    max_search_time: 1800  # 30 minutes
+  
+  training:
+    epochs: 20
+    learning_rate: 0.01
+  
+  evaluation:
+    quick_eval_epochs: 5
+
+# =============================================================================
+# Development and Testing
+# =============================================================================
+
+# Development configuration for quick testing
+dev_test:
+  <<: *default
+  experiment:
+    name: "development_test"
+    description: "Quick configuration for development and testing"
+    tags: ["development", "test", "debug"]
+  
+  dataset:
+    name: "cifar10"
+    batch_size: 32
+    num_workers: 2
+  
+  search:
+    strategy: "random"
+    population_size: 5
+    generations: 3
+    max_search_time: 300  # 5 minutes
+  
+  training:
+    epochs: 5
+  
+  evaluation:
+    quick_eval_epochs: 2
+    save_checkpoints: false
+  
+  output:
+    log_level: "DEBUG" 
