@@ -68,6 +68,9 @@ Thumbs.db
 data/large_datasets/
 datasets/imagenet/
 datasets/cifar100/
+data/cifar-10-batches-py/
+data/cifar10/
+data/raw/
 *.tar.gz
 *.pkl.gz
 *.zip
@@ -81,6 +84,8 @@ data/examples/imagenet_style.pkl
 *.pth.tar
 models/large/
 checkpoints/large/
+checkpoints/**/*.pth
+results/**/*.pth
 
 # Remove these lines to include research artifacts:
 # *.pth - Allow model checkpoints
