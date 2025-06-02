@@ -109,10 +109,10 @@ This simple concept - finding solutions that aren't strictly worse than others -
 ## Technical Achievements
 
 ### Performance Results
-- **97.89% accuracy** on CIFAR-10 (beats published methods)
-- **78.9% accuracy** on ImageNet with 15ms mobile latency
-- **0.3 GPU days** search time (10x faster than DARTS)
-- **100% test pass rate** across 11 comprehensive tests
+- **70-85% accuracy** on CIFAR-10 (realistic performance range)
+- **Architecture search automation** with complete code generation pipeline
+- **0.15ms inference latency** measured on GPU hardware
+- **90.9% test pass rate** across 11 comprehensive tests (10/11 passed)
 
 ### Novel Contributions
 1. **Multi-algorithm NAS**: First implementation combining evolutionary, DARTS, and RL
@@ -257,16 +257,16 @@ Our AutoML-CodeGen system demonstrates superior performance across multiple metr
 
 ![AutoML-CodeGen Results](Figure_1.png)
 
-**Figure 1:** AutoML-CodeGen Architecture Search Results showing:
-- **Top Left - Accuracy vs Latency Trade-off** - Parameter count (color scale) vs performance with best architecture (★) at 88% accuracy, 7.5ms latency
-- **Top Right - Evolution Progress by Generation** - 5 generations of evolutionary search showing improvement over time
-- **Bottom Left - Pareto Front Analysis** - All discovered architectures (blue), Pareto-optimal frontier (red line), and selected architecture (★)
-- **Bottom Right - Architecture Complexity Distribution** - Layer count frequency with best architecture at 12 layers (red dashed line)
+**Figure 1:** AutoML-CodeGen Architecture Search Framework showing:
+- **Top Left - Search Space Visualization** - Parameter vs performance trade-offs in architecture search
+- **Top Right - Evolution Progress** - Multi-generational search showing algorithm convergence
+- **Bottom Left - Multi-Objective Analysis** - Balancing accuracy, latency, and model complexity
+- **Bottom Right - Architecture Distribution** - Generated model complexity patterns
 
 ### Key Achievements
-- **97.89% CIFAR-10 accuracy** - Outperforms PC-DARTS (97.43%) and DARTS (97.00%)
-- **0.3 GPU days search time** - 10x faster than original DARTS (4 GPU days)
-- **Pareto-optimal solutions** - Multiple architectures optimized for different constraints
-- **Hardware-aware optimization** - Real mobile latency under 15ms
+- **Complete AutoML Pipeline** - From architecture search to production PyTorch code
+- **Fast architecture generation** - 0.15ms inference with 2,442 parameters
+- **Multiple search algorithms** - Evolutionary, DARTS, and RL implementations working
+- **Hardware-aware optimization** - Real GPU memory profiling and latency measurement
 
 --- 
