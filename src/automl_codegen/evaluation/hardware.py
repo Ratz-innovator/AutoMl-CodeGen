@@ -430,7 +430,8 @@ class HardwareProfiler:
                             is_flattened = True
                         
                         out_features = layer_spec.get('out_features', 10)
-                        in_features = layer_spec.get('in_features', current_channels)
+                        # Fix: Use current_channels (which is now properly calculated after flatten)
+                        in_features = current_channels
                         layer = nn.Linear(in_features, out_features)
                         self.layers.append(layer)
                         current_channels = out_features
