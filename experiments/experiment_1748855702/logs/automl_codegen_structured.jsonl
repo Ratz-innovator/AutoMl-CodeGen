@@ -1,0 +1,2 @@
+{"timestamp": "2025-06-02T14:45:02.973206", "level": "INFO", "logger": "automl_codegen", "message": "Logger initialized: automl_codegen", "module": "logger", "function": null, "line": 0}
+{"timestamp": "2025-06-02T14:45:02.973488", "level": "INFO", "logger": "automl_codegen.utils.monitoring", "message": "TrainingMonitor initialized (stub implementation)", "module": "monitoring", "function": "__init__", "line": 27}

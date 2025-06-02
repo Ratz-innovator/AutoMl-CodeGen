@@ -257,11 +257,11 @@ Our AutoML-CodeGen system demonstrates superior performance across multiple metr
 
 ![AutoML-CodeGen Results](Figure_1.png)
 
-**Figure 1:** Comprehensive performance analysis showing:
-- **Pareto Front Analysis** - Optimal trade-offs between accuracy, latency, and model size
-- **Search Progress** - Evolution of architecture quality over search iterations  
-- **Benchmark Comparison** - Performance vs published methods (DARTS, ENAS, PC-DARTS)
-- **Architecture Distribution** - Complexity and operation type analysis
+**Figure 1:** AutoML-CodeGen Architecture Search Results showing:
+- **Top Left - Accuracy vs Latency Trade-off** - Parameter count (color scale) vs performance with best architecture (★) at 88% accuracy, 7.5ms latency
+- **Top Right - Evolution Progress by Generation** - 5 generations of evolutionary search showing improvement over time
+- **Bottom Left - Pareto Front Analysis** - All discovered architectures (blue), Pareto-optimal frontier (red line), and selected architecture (★)
+- **Bottom Right - Architecture Complexity Distribution** - Layer count frequency with best architecture at 12 layers (red dashed line)
 
 ### Key Achievements
 - **97.89% CIFAR-10 accuracy** - Outperforms PC-DARTS (97.43%) and DARTS (97.00%)

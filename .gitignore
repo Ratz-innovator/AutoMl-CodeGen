@@ -1,4 +1,4 @@
-# Python
+# Python Cache and Build Files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -39,38 +39,23 @@ venv.bak/
 *.swo
 *~
 
-# Jupyter Notebook
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints
 
-# PyTorch
-*.pth
-*.pt
+# Temporary and cache files
+*.tmp
+*.temp
+.cache/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
 
-# TensorFlow
-*.pb
-*.ckpt*
-events.out.tfevents.*
-
-# Logs
-*.log
-logs/
-tensorboard_logs/
-wandb/
-
-# Experimental results
-results/
-experiments/
-checkpoints/
-outputs/
-generated_models/
-
-# Data
-data/
-datasets/
-*.hdf5
-*.h5
-
-# OS
+# OS files
 .DS_Store
 .DS_Store?
 ._*
@@ -79,19 +64,15 @@ datasets/
 ehthumbs.db
 Thumbs.db
 
-# Temporary files
-*.tmp
-*.temp
-.cache/
-.pytest_cache/
+# Large datasets (but keep small example data)
+data/large_datasets/
+datasets/imagenet/
+datasets/cifar100/
 
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
-coverage.xml
-
-# Mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json 
+# Remove these lines to include research artifacts:
+# *.pth - Allow model checkpoints
+# *.pt - Allow PyTorch models  
+# experiments/ - Allow experimental results
+# checkpoints/ - Allow saved models
+# logs/ - Allow training logs
+# results/ - Allow research results 

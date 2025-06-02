@@ -1,0 +1,71 @@
+2025-06-02 18:37:37,842 - automl_codegen - INFO - None:0 - Logger initialized: automl_codegen
+2025-06-02 18:37:37,843 - automl_codegen.utils.monitoring - INFO - __init__:27 - TrainingMonitor initialized (stub implementation)
+2025-06-02 18:37:37,843 - automl_codegen - INFO - None:0 - Initialized evolutionary search algorithm
+2025-06-02 18:37:37,844 - automl_codegen - INFO - None:0 - Population size: 50
+2025-06-02 18:37:37,844 - automl_codegen - INFO - None:0 - Mutation rate: 0.1
+2025-06-02 18:37:37,844 - automl_codegen - INFO - None:0 - Crossover rate: 0.8
+2025-06-02 18:37:38,016 - automl_codegen - INFO - None:0 - ArchitectureTrainer initialized for image_classification on cifar10
+2025-06-02 18:37:38,016 - automl_codegen - INFO - None:0 - Using device: cuda
+2025-06-02 18:37:38,028 - automl_codegen.evaluation.hardware - INFO - __init__:125 - Hardware profiler initialized for device: cuda
+2025-06-02 18:37:38,029 - automl_codegen.search.nas - INFO - __init__:176 - Initialized NAS for image_classification on cifar10
+2025-06-02 18:37:38,029 - automl_codegen.search.nas - INFO - __init__:177 - Objectives: ['accuracy', 'latency']
+2025-06-02 18:37:38,029 - automl_codegen.search.nas - INFO - __init__:178 - Algorithm: evolutionary
+2025-06-02 18:37:38,029 - automl_codegen.search.nas - INFO - __init__:179 - Hardware target: gpu
+2025-06-02 18:37:38,040 - automl_codegen.codegen.generators.pytorch_gen - INFO - __init__:32 - PyTorch generator initialized (optimization: 2)
+2025-06-02 18:37:38,040 - automl_codegen.codegen.generator - INFO - __init__:143 - Initialized code generator for pytorch
+2025-06-02 18:37:38,041 - automl_codegen.codegen.generator - INFO - __init__:144 - Optimization level: 2
+2025-06-02 18:37:51,676 - automl_codegen - INFO - None:0 - Logger initialized: automl_codegen
+2025-06-02 18:37:51,677 - automl_codegen.utils.monitoring - INFO - __init__:27 - TrainingMonitor initialized (stub implementation)
+2025-06-02 18:37:51,677 - automl_codegen - INFO - None:0 - Initialized evolutionary search algorithm
+2025-06-02 18:37:51,677 - automl_codegen - INFO - None:0 - Population size: 50
+2025-06-02 18:37:51,677 - automl_codegen - INFO - None:0 - Mutation rate: 0.1
+2025-06-02 18:37:51,677 - automl_codegen - INFO - None:0 - Crossover rate: 0.8
+2025-06-02 18:37:51,677 - automl_codegen - INFO - None:0 - ArchitectureTrainer initialized for image_classification on cifar10
+2025-06-02 18:37:51,677 - automl_codegen - INFO - None:0 - Using device: cuda
+2025-06-02 18:37:51,678 - automl_codegen.evaluation.hardware - INFO - __init__:125 - Hardware profiler initialized for device: cuda
+2025-06-02 18:37:51,678 - automl_codegen.search.nas - INFO - __init__:176 - Initialized NAS for image_classification on cifar10
+2025-06-02 18:37:51,678 - automl_codegen.search.nas - INFO - __init__:177 - Objectives: ['accuracy', 'latency']
+2025-06-02 18:37:51,680 - automl_codegen.search.nas - INFO - __init__:178 - Algorithm: evolutionary
+2025-06-02 18:37:51,680 - automl_codegen.search.nas - INFO - __init__:179 - Hardware target: gpu
+2025-06-02 18:37:51,682 - automl_codegen - INFO - None:0 - Logger initialized: automl_codegen
+2025-06-02 18:37:51,683 - automl_codegen.utils.monitoring - INFO - __init__:27 - TrainingMonitor initialized (stub implementation)
+2025-06-02 18:37:51,760 - automl_codegen - INFO - None:0 - Initialized DARTS with 8 cells, 4 nodes
+2025-06-02 18:37:51,761 - automl_codegen - INFO - None:0 - ArchitectureTrainer initialized for image_classification on cifar10
+2025-06-02 18:37:51,762 - automl_codegen - INFO - None:0 - Using device: cuda
+2025-06-02 18:37:51,763 - automl_codegen.evaluation.hardware - INFO - __init__:125 - Hardware profiler initialized for device: cuda
+2025-06-02 18:37:51,764 - automl_codegen.search.nas - INFO - __init__:176 - Initialized NAS for image_classification on cifar10
+2025-06-02 18:37:51,764 - automl_codegen.search.nas - INFO - __init__:177 - Objectives: ['accuracy', 'latency']
+2025-06-02 18:37:51,765 - automl_codegen.search.nas - INFO - __init__:178 - Algorithm: darts
+2025-06-02 18:37:51,765 - automl_codegen.search.nas - INFO - __init__:179 - Hardware target: gpu
+2025-06-02 18:37:51,766 - automl_codegen - INFO - None:0 - Logger initialized: automl_codegen
+2025-06-02 18:37:51,767 - automl_codegen.utils.monitoring - INFO - __init__:27 - TrainingMonitor initialized (stub implementation)
+2025-06-02 18:37:51,769 - automl_codegen - INFO - None:0 - Initialized RL-based search with controller network
+2025-06-02 18:37:51,770 - automl_codegen - INFO - None:0 - ArchitectureTrainer initialized for image_classification on cifar10
+2025-06-02 18:37:51,771 - automl_codegen - INFO - None:0 - Using device: cuda
+2025-06-02 18:37:51,771 - automl_codegen.evaluation.hardware - INFO - __init__:125 - Hardware profiler initialized for device: cuda
+2025-06-02 18:37:51,772 - automl_codegen.search.nas - INFO - __init__:176 - Initialized NAS for image_classification on cifar10
+2025-06-02 18:37:51,773 - automl_codegen.search.nas - INFO - __init__:177 - Objectives: ['accuracy', 'latency']
+2025-06-02 18:37:51,773 - automl_codegen.search.nas - INFO - __init__:178 - Algorithm: reinforcement
+2025-06-02 18:37:51,774 - automl_codegen.search.nas - INFO - __init__:179 - Hardware target: gpu
+2025-06-02 18:37:51,778 - automl_codegen.evaluation.trainer - INFO - __init__:44 - ArchitectureTrainer initialized for None on None
+2025-06-02 18:37:51,779 - automl_codegen.evaluation.trainer - INFO - __init__:45 - Using device: cuda
+2025-06-02 18:37:51,780 - automl_codegen - INFO - None:0 - Logger initialized: automl_codegen
+2025-06-02 18:37:51,781 - automl_codegen.utils.monitoring - INFO - __init__:27 - TrainingMonitor initialized (stub implementation)
+2025-06-02 18:37:51,781 - automl_codegen - INFO - None:0 - Initialized evolutionary search algorithm
+2025-06-02 18:37:51,782 - automl_codegen - INFO - None:0 - Population size: 50
+2025-06-02 18:37:51,783 - automl_codegen - INFO - None:0 - Mutation rate: 0.1
+2025-06-02 18:37:51,784 - automl_codegen - INFO - None:0 - Crossover rate: 0.8
+2025-06-02 18:37:51,784 - automl_codegen - INFO - None:0 - ArchitectureTrainer initialized for image_classification on cifar10
+2025-06-02 18:37:51,785 - automl_codegen - INFO - None:0 - Using device: cuda
+2025-06-02 18:37:51,786 - automl_codegen.evaluation.hardware - INFO - __init__:125 - Hardware profiler initialized for device: cuda
+2025-06-02 18:37:51,786 - automl_codegen.search.nas - INFO - __init__:176 - Initialized NAS for image_classification on cifar10
+2025-06-02 18:37:51,787 - automl_codegen.search.nas - INFO - __init__:177 - Objectives: ['accuracy', 'latency']
+2025-06-02 18:37:51,787 - automl_codegen.search.nas - INFO - __init__:178 - Algorithm: evolutionary
+2025-06-02 18:37:51,788 - automl_codegen.search.nas - INFO - __init__:179 - Hardware target: gpu
+2025-06-02 18:37:51,788 - automl_codegen.codegen.generators.pytorch_gen - INFO - __init__:32 - PyTorch generator initialized (optimization: 2)
+2025-06-02 18:37:51,789 - automl_codegen.codegen.generator - INFO - __init__:143 - Initialized code generator for pytorch
+2025-06-02 18:37:51,790 - automl_codegen.codegen.generator - INFO - __init__:144 - Optimization level: 2
+2025-06-02 18:37:51,791 - automl_codegen.codegen.generator - INFO - generate:234 - Generating pytorch code for architecture
+2025-06-02 18:37:51,791 - automl_codegen.codegen.generators.pytorch_gen - INFO - generate_model:44 - Generating PyTorch model code
+2025-06-02 18:37:51,792 - automl_codegen.codegen.generators.pytorch_gen - INFO - generate_model:68 - PyTorch code generation completed
+2025-06-02 18:37:51,821 - automl_codegen.codegen.generator - INFO - generate:302 - Code generation completed successfully

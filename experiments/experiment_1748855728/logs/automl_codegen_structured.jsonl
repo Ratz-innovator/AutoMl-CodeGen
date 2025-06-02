@@ -1,0 +1,6 @@
+{"timestamp": "2025-06-02T14:45:28.828992", "level": "INFO", "logger": "automl_codegen", "message": "Logger initialized: automl_codegen", "module": "logger", "function": null, "line": 0}
+{"timestamp": "2025-06-02T14:45:28.829287", "level": "INFO", "logger": "automl_codegen.utils.monitoring", "message": "TrainingMonitor initialized (stub implementation)", "module": "monitoring", "function": "__init__", "line": 27}
+{"timestamp": "2025-06-02T14:45:28.829620", "level": "INFO", "logger": "automl_codegen", "message": "Initialized evolutionary search algorithm", "module": "logger", "function": null, "line": 0}
+{"timestamp": "2025-06-02T14:45:28.829821", "level": "INFO", "logger": "automl_codegen", "message": "Population size: 50", "module": "logger", "function": null, "line": 0}
+{"timestamp": "2025-06-02T14:45:28.830006", "level": "INFO", "logger": "automl_codegen", "message": "Mutation rate: 0.1", "module": "logger", "function": null, "line": 0}
+{"timestamp": "2025-06-02T14:45:28.830180", "level": "INFO", "logger": "automl_codegen", "message": "Crossover rate: 0.8", "module": "logger", "function": null, "line": 0}
