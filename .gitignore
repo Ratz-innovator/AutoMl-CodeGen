@@ -64,10 +64,23 @@ coverage.xml
 ehthumbs.db
 Thumbs.db
 
-# Large datasets (but keep small example data)
+# Large datasets and files
 data/large_datasets/
 datasets/imagenet/
 datasets/cifar100/
+*.tar.gz
+*.pkl.gz
+*.zip
+data/**/*.tar.gz
+data/**/*.pkl
+data/cifar-10-python.tar.gz
+data/examples/large_cifar.pkl
+data/examples/imagenet_style.pkl
+
+# Large model files (over 100MB)
+*.pth.tar
+models/large/
+checkpoints/large/
 
 # Remove these lines to include research artifacts:
 # *.pth - Allow model checkpoints
