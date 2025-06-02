@@ -373,6 +373,6 @@ Just like how PyTorch made deep learning accessible, nanoNAS makes automatic arc
 
 ## 📜 License
 
-MIT License - Use it, modify it, teach with it, build upon it.
+Open source educational project - Use it, modify it, teach with it, build upon it.
 
 **Educational impact > everything else.** 
