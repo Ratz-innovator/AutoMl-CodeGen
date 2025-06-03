@@ -51,6 +51,9 @@ from .utils.hardware_utils import profile_current_device
 # Main API functions
 from .api import search, benchmark, visualize
 
+# Educational implementation
+from .educational import nano_nas
+
 # CLI interface
 from .cli import cli
 
@@ -64,6 +67,7 @@ __all__ = [
     "search",
     "benchmark", 
     "visualize",
+    "nano_nas",
     
     # Core classes
     "Architecture",
