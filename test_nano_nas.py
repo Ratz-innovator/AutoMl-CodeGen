@@ -7,7 +7,19 @@ Clean, minimal tests for the educational NAS implementation.
 
 import torch
 import pytest
-from nanonas import nano_nas, Architecture, Operation
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Import directly from root nanonas.py file 
+import importlib.util
+spec = importlib.util.spec_from_file_location("nanonas_root", "nanonas.py")
+nanonas_root = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(nanonas_root)
+
+nano_nas = nanonas_root.nano_nas
+Architecture = nanonas_root.Architecture
+Operation = nanonas_root.Operation
 from nas_insights import ArchitectureDNA
 
 

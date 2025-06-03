@@ -1,6 +1,12 @@
 # 🤝 Contributing to nanoNAS
 
-Thank you for your interest in contributing to nanoNAS! This document provides guidelines and information for contributors.
+We love your input! We want to make contributing to nanoNAS as easy and transparent as possible, whether it's:
+
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+- Becoming a maintainer
 
 ## 🎯 Table of Contents
 
@@ -17,6 +23,280 @@ Thank you for your interest in contributing to nanoNAS! This document provides g
 ## 📜 Code of Conduct
 
 This project adheres to a code of conduct that we expect all contributors to follow. Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a welcoming environment for everyone.
+
+## 🚀 Development Process
+
+We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
+
+### Pull Requests
+
+1. Fork the repo and create your branch from `main`.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs, update the documentation.
+4. Ensure the test suite passes.
+5. Make sure your code lints.
+6. Issue that pull request!
+
+## 🛠️ Development Setup
+
+### Prerequisites
+
+- Python 3.8+
+- PyTorch 2.0+
+- Git
+
+### Setup
+
+```bash
+# Clone your fork
+git clone https://github.com/your-username/nanoNAS.git
+cd nanoNAS
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install in development mode
+pip install -e ".[dev]"
+
+# Install pre-commit hooks
+pre-commit install
+```
+
+### Development Dependencies
+
+```bash
+pip install pytest pytest-cov black mypy flake8 pre-commit
+```
+
+## 🧪 Testing
+
+### Running Tests
+
+```bash
+# Run basic functionality tests
+python simple_test.py
+python test_package.py
+
+# Run full test suite
+pytest tests/ -v
+
+# Run with coverage
+pytest tests/ --cov=nanonas --cov-report=html
+```
+
+### Writing Tests
+
+- Place tests in the `tests/` directory
+- Use descriptive test names
+- Follow the existing test structure
+- Aim for >90% code coverage
+
+Example test:
+```python
+def test_architecture_creation():
+    """Test that architectures can be created properly."""
+    search_space = SearchSpace.get_nano_search_space()
+    arch = Architecture([0, 1, 2], search_space)
+    assert arch.encoding == [0, 1, 2]
+    assert arch.search_space == search_space
+```
+
+## 📝 Code Style
+
+We use several tools to maintain code quality:
+
+### Formatting
+
+```bash
+# Format code with black
+black nanonas/ tests/
+
+# Check formatting
+black --check nanonas/ tests/
+```
+
+### Type Checking
+
+```bash
+# Run mypy
+mypy nanonas/
+```
+
+### Linting
+
+```bash
+# Run flake8
+flake8 nanonas/ tests/
+```
+
+### Pre-commit Hooks
+
+We use pre-commit to run checks automatically:
+
+```bash
+# Install hooks
+pre-commit install
+
+# Run all hooks manually
+pre-commit run --all-files
+```
+
+## 📚 Documentation
+
+### Code Documentation
+
+- Use docstrings for all public functions and classes
+- Follow Google-style docstrings
+- Include type hints for all function signatures
+
+Example:
+```python
+def search(strategy: str, dataset: str, **kwargs) -> nn.Module:
+    """
+    Perform neural architecture search.
+    
+    Args:
+        strategy: Search strategy to use ('evolutionary', 'darts', etc.)
+        dataset: Dataset name ('cifar10', 'cifar100', etc.)
+        **kwargs: Additional search parameters
+        
+    Returns:
+        Best found model
+        
+    Raises:
+        ValueError: If strategy or dataset is invalid
+    """
+```
+
+### README Updates
+
+If your changes affect the user interface:
+- Update the README.md
+- Add examples if relevant
+- Update the quick start guide
+
+## 🐛 Bug Reports
+
+Use GitHub issues to report bugs. Include:
+
+1. **Quick summary** of the bug
+2. **Steps to reproduce**
+3. **Expected behavior**
+4. **Actual behavior**
+5. **Environment details** (OS, Python version, PyTorch version)
+6. **Code sample** if applicable
+
+**Great Bug Reports** tend to have:
+
+- Clear, specific summary
+- Minimal reproducible example
+- Stack trace if there's an exception
+- Environment information
+
+## 💡 Feature Requests
+
+We love feature requests! Use GitHub issues with the "enhancement" label.
+
+Please provide:
+- **Use case**: Why is this feature needed?
+- **Proposed solution**: How should it work?
+- **Alternatives considered**: What other approaches did you consider?
+
+## 🏗️ Architecture Guidelines
+
+### Adding New Search Strategies
+
+1. Create a new file in `nanonas/search/`
+2. Inherit from `BaseSearchStrategy`
+3. Implement required methods
+4. Add tests
+5. Update documentation
+
+Example structure:
+```python
+class NewSearchStrategy(BaseSearchStrategy):
+    def __init__(self, config: ExperimentConfig):
+        super().__init__(config)
+    
+    def search(self) -> Architecture:
+        # Implementation here
+        pass
+```
+
+### Adding New Operations
+
+1. Add operation to `nanonas/models/operations.py`
+2. Update search spaces if needed
+3. Add tests
+4. Document the operation
+
+### Adding New Datasets
+
+1. Add dataset loader to `nanonas/benchmarks/datasets.py`
+2. Update configuration options
+3. Add tests
+4. Document usage
+
+## 🎯 Contribution Ideas
+
+### For Beginners
+
+- Fix typos in documentation
+- Add more test cases
+- Improve error messages
+- Add type hints to uncovered code
+
+### For Intermediate
+
+- Implement new search strategies
+- Add visualization features
+- Improve performance of existing algorithms
+- Add new neural operations
+
+### For Advanced
+
+- Add support for new hardware (TPU, mobile)
+- Implement advanced NAS techniques
+- Add multi-objective optimization features
+- Performance optimizations
+
+## 📋 Release Process
+
+### Version Numbering
+
+We follow [Semantic Versioning](https://semver.org/):
+- MAJOR: incompatible API changes
+- MINOR: backwards-compatible functionality
+- PATCH: backwards-compatible bug fixes
+
+### Release Checklist
+
+1. Update version in `pyproject.toml`
+2. Update CHANGELOG.md
+3. Run full test suite
+4. Update documentation
+5. Create release on GitHub
+6. Deploy to PyPI (maintainers only)
+
+## 📞 Getting Help
+
+- **GitHub Issues**: For bugs and feature requests
+- **GitHub Discussions**: For questions and general discussion
+- **Email**: research@nanonas.ai for sensitive issues
+
+## 📄 License
+
+By contributing, you agree that your contributions will be licensed under the MIT License.
+
+## 🙏 Recognition
+
+Contributors will be:
+- Listed in the CONTRIBUTORS.md file
+- Mentioned in release notes for significant contributions
+- Invited to join the maintainer team for outstanding contributions
+
+Thank you for contributing to nanoNAS! 🎉
 
 ## 🚀 Getting Started
 

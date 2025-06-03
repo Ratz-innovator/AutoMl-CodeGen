@@ -36,17 +36,23 @@ from .core.architecture import Architecture, SearchSpace
 from .core.config import SearchConfig, ExperimentConfig
 from .search.evolutionary import EvolutionarySearch
 from .search.darts import DARTSSearch
-from .search.reinforcement import ReinforcementSearch
+from .search.progressive_darts import ProgressiveDARTSSearch
+from .search.bayesian_optimization import BayesianOptimizationSearch
+# from .search.reinforcement import ReinforcementSearch  # Module not implemented yet
 from .search.multiobjective import MultiObjectiveSearch
-from .models.supernet import SuperNet
+from .models.supernet import DARTSSupernet
 from .models.operations import *
 from .benchmarks.evaluator import ModelEvaluator
 from .benchmarks.datasets import get_dataset
 from .visualization.architecture_viz import ArchitectureVisualizer
-from .utils.metrics import compute_model_stats
+# from .utils.metrics import compute_model_stats  # Module not implemented yet
+from .utils.hardware_utils import profile_current_device
 
 # Main API functions
 from .api import search, benchmark, visualize
+
+# CLI interface
+from .cli import cli
 
 __version__ = "1.0.0"
 __author__ = "AutoML Research Team"
@@ -67,12 +73,14 @@ __all__ = [
     
     # Search strategies
     "EvolutionarySearch",
-    "DARTSSearch", 
-    "ReinforcementSearch",
+    "DARTSSearch",
+    "ProgressiveDARTSSearch", 
+    "BayesianOptimizationSearch",
+    # "ReinforcementSearch",  # Module not implemented yet
     "MultiObjectiveSearch",
     
     # Models and operations
-    "SuperNet",
+    "DARTSSupernet",
     
     # Benchmarking
     "ModelEvaluator",
@@ -82,7 +90,11 @@ __all__ = [
     "ArchitectureVisualizer",
     
     # Utilities
-    "compute_model_stats",
+    # "compute_model_stats",  # Module not implemented yet
+    "profile_current_device",
+    
+    # CLI
+    "cli",
 ]
 
 # Configuration for better user experience
@@ -95,7 +107,7 @@ def get_version():
 
 def list_search_strategies():
     """List all available search strategies."""
-    return ["evolutionary", "darts", "reinforcement", "multiobjective", "random"]
+    return ["evolutionary", "darts", "progressive_darts", "bayesian", "reinforcement", "multiobjective", "random"]
 
 def list_datasets():
     """List all supported datasets."""

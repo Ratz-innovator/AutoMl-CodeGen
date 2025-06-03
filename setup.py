@@ -70,9 +70,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "nanonas=nanonas.cli:main",
-            "nanonas-benchmark=nanonas.benchmarks.cli:main",
-            "nanonas-viz=nanonas.visualization.cli:main",
+            "nanonas=nanonas.cli:cli",
         ],
     },
     include_package_data=True,

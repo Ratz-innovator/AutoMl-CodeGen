@@ -9,7 +9,7 @@ from .training import Trainer, TrainingConfig
 from .data_utils import get_dataset_loaders, DatasetConfig
 from .logging_utils import setup_logging, ResultLogger
 from .reproducibility import set_seed, get_reproducible_config
-from .hardware_utils import get_device_info, estimate_model_memory
+from .hardware_utils import profile_current_device, estimate_architecture_performance
 
 __all__ = [
     'Trainer',
@@ -20,6 +20,6 @@ __all__ = [
     'ResultLogger',
     'set_seed',
     'get_reproducible_config',
-    'get_device_info',
-    'estimate_model_memory'
+    'profile_current_device',
+    'estimate_architecture_performance'
 ] 
